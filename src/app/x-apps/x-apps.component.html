@@ -1,3 +1,15 @@
 <p>
   x-apps works!
 </p>
+
+<div *ngIf="apps.length">
+  <h2>Apps</h2>
+
+  <ul class="apps">
+    <li *ngFor="let app of apps">
+      <a routerLink="/app/{{ app.Id }}">
+        {{ app.Name }}
+      </a>
+    </li>
+  </ul>
+</div>

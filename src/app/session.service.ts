@@ -21,6 +21,7 @@ export class SessionService {
   }
 
   setToken(token: Token) {
+    console.log('set token', token);
     this.token = token;
   }
 
