@@ -16,6 +16,21 @@ import { UserService } from './user.service';
 import { AppRoutingModule } from './app-routing.module';
 import { ApiService } from './api.service';
 import { AuthInterceptor } from './auth.interceptor';
+import { XAppsComponent } from './x-apps/x-apps.component';
+import { XApisComponent } from './x-apis/x-apis.component';
+import { XAppDetailComponent } from './x-app-detail/x-app-detail.component';
+import { XApiDetailComponent } from './x-api-detail/x-api-detail.component';
+import { XApiService } from './x-api.service';
+import { XAppService } from './x-app.service';
+import { XHostsComponent } from './x-hosts/x-hosts.component';
+import { XHostDetailComponent } from './x-host-detail/x-host-detail.component';
+import { XVersionDetailComponent } from './x-version-detail/x-version-detail.component';
+import { XVersionsComponent } from './x-versions/x-versions.component';
+import { XHostService } from './x-host.service';
+import { XVersionService } from './x-version.service';
+import { XOrgsComponent } from './x-orgs/x-orgs.component';
+import { XOrgService } from './x-org.service';
+import { XOrgDetailComponent } from './x-org-detail/x-org-detail.component';
 
 
 @NgModule({
@@ -25,7 +40,17 @@ import { AuthInterceptor } from './auth.interceptor';
     RegisterComponent,
     UsersComponent,
     UserDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    XAppsComponent,
+    XApisComponent,
+    XAppDetailComponent,
+    XApiDetailComponent,
+    XHostsComponent,
+    XHostDetailComponent,
+    XVersionDetailComponent,
+    XVersionsComponent,
+    XOrgsComponent,
+    XOrgDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -33,15 +58,20 @@ import { AuthInterceptor } from './auth.interceptor';
     HttpClientModule
   ],
   providers: [
-    AuthService,
-    UserService,
-    ApiService,
-    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    }
+    },
+    AuthService,
+    UserService,
+    ApiService,
+    AuthGuard,
+    XApiService,
+    XAppService,
+    XHostService,
+    XVersionService,
+    XOrgService
   ],
   bootstrap: [AppComponent]
 })
