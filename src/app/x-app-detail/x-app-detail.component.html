@@ -1,3 +1,12 @@
-<p>
-  x-app-detail works!
-</p>
+<div *ngIf="app">
+  <h2>{{ app.name }}</h2>
+
+  <ul class="apis">
+    <li *ngFor="let api of app.Apis">
+      <a routerLink="/api/{{ api.Id }}">
+        <span class="badge">{{ api.Id }}</span>
+        {{ api.Name }}
+      </a>
+    </li>
+  </ul>
+</div>
