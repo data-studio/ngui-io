@@ -12,12 +12,12 @@ const TOKEN_STORAGE_KEY = '_SESS';
 @Injectable()
 export class SessionService {
 
-  constructor(
-    private token: Token
-  ) { }
+  token: Token;
+
+  constructor() { }
 
   getAuthorizationHeader(): string {
-    return this.token.Key || 'foobarsnacks';
+    return this.token && this.token.Key || 'foobarsnacks';
   }
 
   setToken(token: Token) {

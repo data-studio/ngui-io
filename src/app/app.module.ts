@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserService } from './user.service';
 import { AppRoutingModule } from './app-routing.module';
 import { ApiService } from './api.service';
+import { SessionService } from './session.service';
 import { AuthInterceptor } from './auth.interceptor';
 import { XAppsComponent } from './x-apps/x-apps.component';
 import { XApisComponent } from './x-apis/x-apis.component';
@@ -66,6 +67,7 @@ import { XOrgDetailComponent } from './x-org-detail/x-org-detail.component';
     AuthService,
     UserService,
     ApiService,
+    SessionService,
     AuthGuard,
     XApiService,
     XAppService,
