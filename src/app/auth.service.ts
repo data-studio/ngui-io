@@ -20,7 +20,7 @@ export class AuthService {
   ) { }
 
   getAuthorizationHeader() {
-    return 'foobar';
+    return '';
   }
 
   login(username: string, password: string): Observable<any> {
@@ -32,6 +32,7 @@ export class AuthService {
     return this.api.post('auth/attempts', authAttempt)
       .pipe(
         tap(data => {
+          console.log('login success', data);
           let authAttempt = <AuthAttempt>data;
           if (authAttempt && authAttempt.Token) {
             let token = JSON.stringify(authAttempt.Token);
