@@ -1,6 +1,9 @@
+import { XOrg } from './x-org';
+
 export class User {
   constructor(
-    public id: string,
-    public username: string
+    public Id: string,
+    public Login: string,
+    public Orgs: XOrg[]
   ) {  }
 }

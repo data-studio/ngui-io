@@ -24,7 +24,7 @@ export class XAppService {
   }
 
   update(xApp: XApp) {
-    return this.api.put(`app/${xApp.id}`, xApp);
+    return this.api.put(`app/${xApp.Id}`, xApp);
   }
 
   delete(id: string) {

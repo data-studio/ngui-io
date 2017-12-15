@@ -1,7 +1,11 @@
+import { XApi } from './x-api';
+
 export class XApp {
   constructor(
-    public id: string,
-    public xOrgId: string,
-    public name: string
+    public Id: string,
+    public OrgId: string,
+    public UserId: string,
+    public Name: string,
+    public Apis: XApi[]
   ) {  }
 }

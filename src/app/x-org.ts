@@ -1,6 +1,12 @@
+import { XApp } from './x-app';
+import { XHost } from './x-host';
+
 export class XOrg {
   constructor(
-    public id: string,
-    public name: string
+    public Id: string,
+    public UserId: string,
+    public Name: string,
+    public Apps: XApp[],
+    public Hosts: XHost[]
   ) {  }
 }

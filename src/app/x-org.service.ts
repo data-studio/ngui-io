@@ -24,7 +24,7 @@ export class XOrgService {
   }
 
   update(xOrg: XOrg) {
-    return this.api.put(`org/${xOrg.id}`, xOrg);
+    return this.api.put(`org/${xOrg.Id}`, xOrg);
   }
 
   delete(id: string) {

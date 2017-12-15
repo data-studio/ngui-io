@@ -24,7 +24,7 @@ export class XHostService {
   }
 
   update(xHost: XHost) {
-    return this.api.put(`host/${xHost.id}`, xHost);
+    return this.api.put(`host/${xHost.Id}`, xHost);
   }
 
   delete(id: string) {

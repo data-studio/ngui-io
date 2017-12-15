@@ -24,7 +24,7 @@ export class XVersionService {
   }
 
   update(xVersion: XVersion) {
-    return this.api.put(`version/${xVersion.id}`, xVersion);
+    return this.api.put(`version/${xVersion.Id}`, xVersion);
   }
 
   delete(id: string) {

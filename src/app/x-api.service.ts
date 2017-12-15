@@ -24,7 +24,7 @@ export class XApiService {
   }
 
   update(xApi: XApi) {
-    return this.api.put(`api/${xApi.id}`, xApi);
+    return this.api.put(`api/${xApi.Id}`, xApi);
   }
 
   delete(id: string) {

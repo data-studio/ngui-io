@@ -1,7 +1,10 @@
+import { XVersion } from './x-version';
+
 export class XApi {
   constructor(
-    public id: string,
-    public xAppId: string,
-    public name: string
+    public Id: string,
+    public AppId: string,
+    public Name: string,
+    public Versions: XVersion[]
   ) {  }
 }

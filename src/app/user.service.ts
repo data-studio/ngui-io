@@ -24,7 +24,7 @@ export class UserService {
   }
 
   update(user: User) {
-    return this.api.put(`user/${user.id}`, user);
+    return this.api.put(`user/${user.Id}`, user);
   }
 
   delete(id: string) {
