@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
+import { XAppService } from '../x-app.service';
 import { XApp } from '../x-app';
 
 @Component({
@@ -9,9 +12,26 @@ import { XApp } from '../x-app';
 })
 export class XAppDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() app: Object;
+
+  constructor(
+    private route: ActivatedRoute,
+    private xAppService: XAppService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+    this.getApp();
+  }
+
+  getApp(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.xAppService.getById(id)
+      .subscribe(app => this.app = app);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
