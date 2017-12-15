@@ -21,22 +21,25 @@ import { XVersionDetailComponent } from './x-version-detail/x-version-detail.com
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [ AuthGuard ] },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'user/:id', component: UserDetailComponent },
-  { path: 'apis', component: XApisComponent },
-  { path: 'api/:id', component: XApiDetailComponent },
-  { path: 'apps', component: XAppsComponent },
-  { path: 'app/:id', component: XAppDetailComponent },
-  { path: 'hosts', component: XHostsComponent },
-  { path: 'host/:id', component: XHostDetailComponent },
-  { path: 'orgs', component: XOrgsComponent },
-  { path: 'org/:id', component: XOrgDetailComponent },
-  { path: 'versions', component: XVersionsComponent },
-  { path: 'version/:id', component: XVersionDetailComponent },
+
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+
+  { path: 'login',       component: LoginComponent },
+  { path: 'register',    component: RegisterComponent },
+
+  { path: 'dashboard',   component: DashboardComponent,        canActivate: [ AuthGuard ] },
+  { path: 'users',       component: UsersComponent,            canActivate: [ AuthGuard ] },
+  { path: 'user/:id',    component: UserDetailComponent,       canActivate: [ AuthGuard ] },
+  { path: 'apis',        component: XApisComponent,            canActivate: [ AuthGuard ] },
+  { path: 'api/:id',     component: XApiDetailComponent,       canActivate: [ AuthGuard ] },
+  { path: 'apps',        component: XAppsComponent,            canActivate: [ AuthGuard ] },
+  { path: 'app/:id',     component: XAppDetailComponent,       canActivate: [ AuthGuard ] },
+  { path: 'hosts',       component: XHostsComponent,           canActivate: [ AuthGuard ] },
+  { path: 'host/:id',    component: XHostDetailComponent,      canActivate: [ AuthGuard ] },
+  { path: 'orgs',        component: XOrgsComponent,            canActivate: [ AuthGuard ] },
+  { path: 'org/:id',     component: XOrgDetailComponent,       canActivate: [ AuthGuard ] },
+  { path: 'versions',    component: XVersionsComponent,        canActivate: [ AuthGuard ] },
+  { path: 'version/:id', component: XVersionDetailComponent,   canActivate: [ AuthGuard ] },
 ];
 
 @NgModule({

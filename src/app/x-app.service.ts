@@ -15,7 +15,7 @@ export class XAppService {
     private api: ApiService
   ) {  }
 
-  getAll(): Observable<XApp[]> {
+  getAll(): Observable<any> {
     return this.api.get('apps/all')
       .pipe(
         tap(data => {
