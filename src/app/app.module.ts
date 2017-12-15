@@ -54,6 +54,7 @@ import { XOrgDetailComponent } from './x-org-detail/x-org-detail.component';
     XOrgDetailComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
