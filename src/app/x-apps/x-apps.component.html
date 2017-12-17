@@ -4,6 +4,11 @@
 
 <div *ngIf="apps.length">
   <h2>Apps</h2>
+  <a mat-button
+    [routerLink]="['/app/new']"
+    class="btn btn-link">
+    Create New App
+  </a>
 
   <ul class="apps">
     <li *ngFor="let app of apps">

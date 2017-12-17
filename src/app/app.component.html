@@ -1,4 +1,15 @@
-<h1>{{title}}</h1>
+<mat-toolbar role="header" color="primary">
+  <button mat-button>
+    <span>{{title}}</span>
+  </button>
+  <span class="example-fill-remaining-space"></span>
+  <button mat-icon-button>
+    <mat-icon aria-label="Main menu">
+      menu
+    </mat-icon>
+  </button>
+</mat-toolbar>
+
 <nav>
   [<a routerLink="/login">Login</a>]
   <a routerLink="/dashboard">Dashboard</a>
@@ -9,4 +20,7 @@
   <a routerLink="/hosts">Hosts</a>
   <a routerLink="/versions">API Versions</a>
 </nav>
-<router-outlet></router-outlet>
+
+<div id="r0">
+  <router-outlet></router-outlet>
+</div>

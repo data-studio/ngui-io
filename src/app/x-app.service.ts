@@ -27,8 +27,16 @@ export class XAppService {
       );
   }
 
-  getById(id: string) {
-    return this.api.get(`app/${id}`);
+  getById(id: string): Observable<any> {
+    return this.api.get(`app/${id}`)
+      .pipe(
+        tap(data => {
+          console.log('get app success', data);
+          let apps = <XApp>data;
+          return apps;
+        }),
+        catchError(this.handleError('getById', []))
+      );
   }
 
   create(xApp: XApp) {

@@ -1,51 +1,60 @@
-<div class="col-md-6 col-md-offset-3">
-    <h2>Login</h2>
-    <form name="form"
-      (ngSubmit)="f.form.valid && login()"
-      #f="ngForm"
-      novalidate>
-      <div class="form-group"
-        [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-        <label for="username">
-          Username
-        </label>
-        <input type="text"
+
+<form name="form"
+  (ngSubmit)="f.form.valid && login()"
+  #f="ngForm"
+  novalidate>
+
+  <mat-card class="login-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <mat-icon>person</mat-icon>
+      </div>
+      <mat-card-title>API Manager</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field style="width: 100%">
+        <input matInput
+          placeholder="Username"
+          type="text"
           class="form-control"
           name="username"
           [(ngModel)]="model.username"
           #username="ngModel"
           required />
-        <div *ngIf="f.submitted && !username.valid"
+        <mat-error *ngIf="f.submitted && !username.valid"
           class="help-block">
           Username is required
-        </div>
-      </div>
-      <div class="form-group"
-        [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-        <label for="password">
-          Password
-        </label>
-        <input type="password"
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 100%">
+        <input matInput
+          placeholder="Password"
+          type="password"
           class="form-control"
           name="password"
           [(ngModel)]="model.password"
           #password="ngModel"
           required />
-        <div *ngIf="f.submitted && !password.valid"
+        <mat-error *ngIf="f.submitted && !password.valid"
           class="help-block">
           Password is required
-        </div>
-      </div>
-      <div class="form-group">
-        <button [disabled]="loading"
-          class="btn btn-primary">
-          Login
-        </button>
-        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-        <a [routerLink]="['/register']"
-          class="btn btn-link">
-          Register
-        </a>
-      </div>
-    </form>
-</div>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button
+        [disabled]="loading"
+        class="btn btn-primary"
+        color="primary">
+        Login
+      </button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <a mat-button
+        [routerLink]="['/register']"
+        class="btn btn-link">
+        Register
+      </a>
+    </mat-card-actions>
+  </mat-card>
+
+</form>

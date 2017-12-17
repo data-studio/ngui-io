@@ -1,0 +1,9 @@
+
+
+.new-app-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.new-app-form-wrapper > * {
+  width: 100%;
+}

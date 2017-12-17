@@ -1,9 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpRequest } from '@angular/common/http';
-
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { catchError, map, tap } from 'rxjs/operators';
 
 import { Token } from './token';
 
@@ -27,6 +22,10 @@ export class SessionService {
 
   getToken(): Token {
     return this.token;
+  }
+
+  hasToken(): boolean {
+    return !!this.getToken();
   }
 
 }

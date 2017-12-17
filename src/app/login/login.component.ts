@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 
 @Component({
   moduleId: module.id,
+  selector: '.ds-login',
   templateUrl: 'login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -12,7 +13,10 @@ export class LoginComponent implements OnInit {
 
   loading = false;
 
-  model: any = {};
+  model: any = {
+    username: 'admin@eviratec',
+    password: 'password123'
+  };
   returnUrl: string;
 
   constructor(

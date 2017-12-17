@@ -1,6 +1,7 @@
 <div *ngIf="app">
-  <h2>{{ app.name }}</h2>
+  <h2>{{ app.Name }}</h2>
 
+  <h3>APIs</h3>
   <ul class="apis">
     <li *ngFor="let api of app.Apis">
       <a routerLink="/api/{{ api.Id }}">

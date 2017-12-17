@@ -1,0 +1,13 @@
+header {
+  background: linear-gradient(to top, #00E5FF 0%, #0091EA 100%);
+  padding: 24px;
+  height: 128px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+mat-toolbar .example-fill-remaining-space {
+  flex: 1 1 auto;
+}
